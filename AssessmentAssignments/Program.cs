@@ -4,9 +4,7 @@ namespace AssessmentAssignments
 {
     class Program
     {
-
         //1ST PROGRAM
-
         public static void NumberofSocks()
         {
             Console.WriteLine("Enter Letters of the Socks: ");
@@ -29,13 +27,11 @@ namespace AssessmentAssignments
             Console.WriteLine($"The Number of Pairs are {sockPairs}");
         }
 
-
-
-
         //2ND PROGRAM
-
-        public static void DisplaySeriesAndSum(int numberOfTerms)
+        public static void DisplaySeriesAndSum()
         {
+            Console.WriteLine("Input the number of terms: ");
+            int numberOfTerms = Convert.ToInt32(Console.ReadLine());
             int sum = 0;
             int Digit = 9;
 
@@ -53,12 +49,7 @@ namespace AssessmentAssignments
             Console.WriteLine($"\nThe sum of the series = {sum}");
         }
 
-
-
-        
-
         //3RD PROGRAM
-
         static void AddTwoIndirectly(string num1, string num2)
         {
             int maxLength;
@@ -89,13 +80,11 @@ namespace AssessmentAssignments
                 int digit1 = int.Parse(num1[i].ToString());
                 int digit2 = int.Parse(num2[i].ToString());
 
-                result += digit1 + digit2;
+                result = result + (digit1 + digit2);
             }
 
             Console.WriteLine("Concatenated Result: " + result);
         }
-
-
 
         //4th PROGRAM
         static void CountPositivesAndSumNegatives()
@@ -122,47 +111,47 @@ namespace AssessmentAssignments
                 }
                 else if (number < 0)
                 {
-                    sumNegatives += number;
+                    sumNegatives = sumNegatives + number;
                 }
             }
 
-            // Display the entered array
             Console.WriteLine("Entered array:");
             foreach (int number in numbers)
             {
                 Console.Write(number + " ");
             }
 
-            // Display the result
             Console.WriteLine($"\nResult: [{countPositives}, {sumNegatives}]");
         }
 
-
-
-
-
         //5th Program
-        static void BubbleSortAndDisplay(int[] arr)
+        static void BubbleSortAndDisplay()
         {
-            int n = arr.Length;
-
-            for (int i = 0; i < n - 1; i++)
+            int[] numbers = new int[10];
+            for (int i = 0; i < 10; i++)
             {
-                for (int j = 0; j < n - i - 1; j++)
+                Console.Write($"Enter integer {i + 1}: ");
+                numbers[i] = int.Parse(Console.ReadLine());
+            }
+            int n = numbers.Length;
+           // Arranging the numbers in ascending order
+            for (int i = 1; i < n ; i++)
+            {
+                for (int j = 0; j < n - i ; j++)
                 {
                     // Swap if the element found is greater than the next element
-                    if (arr[j] > arr[j + 1])
+                    if (numbers[j] > numbers[j + 1])
                     {
-                        int temp = arr[j];
-                        arr[j] = arr[j + 1];
-                        arr[j + 1] = temp;
+                        int temp = numbers[j];
+                        numbers[j] = numbers[j + 1];
+                        numbers[j + 1] = temp;
                     }
                 }
             }
 
             // Display the sorted array
             Console.WriteLine("\nSorted array:");
-            foreach (int number in arr)
+            foreach (int number in numbers)
             {
                 Console.Write(number + " ");
             }
@@ -173,18 +162,13 @@ namespace AssessmentAssignments
         static void Main(string[] args)
         {
 
-            //1ST PROGRAM
+
+
+            ////1ST PROGRAM
             //NumberofSocks();
 
-
-
-            //// 2nd PROGRAM
-            //Console.WriteLine("Input the number of terms: ");
-            //int numberOfTerms = Convert.ToInt32(Console.ReadLine());
-            //DisplaySeriesAndSum(numberOfTerms);
-
-
-
+            // 2nd PROGRAM
+            DisplaySeriesAndSum();
 
             ////3RD PROGRAM
             //Console.Write("Enter the first number: ");
@@ -193,23 +177,11 @@ namespace AssessmentAssignments
             //string num2 = Console.ReadLine();
             //AddTwoIndirectly(num1, num2);
 
-
-
-            ////4th PROGRAM
+            //4th PROGRAM
             //CountPositivesAndSumNegatives();
-            // CountPosSumNeg();
-
-
-
 
             //5th Program
-            int[] numbers = new int[10];
-            for (int i = 0; i < 10; i++)
-            {
-                Console.Write($"Enter integer {i + 1}: ");
-                numbers[i] = int.Parse(Console.ReadLine());
-            }
-            BubbleSortAndDisplay(numbers);
+            //BubbleSortAndDisplay();
 
 
 
