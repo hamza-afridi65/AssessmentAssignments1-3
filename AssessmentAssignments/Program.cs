@@ -7,7 +7,7 @@ namespace AssessmentAssignments
         //1ST PROGRAM
         public static void NumberofSocks()
         {
-           // Console.WriteLine(  "Hello world");
+           
             Console.WriteLine("Enter Letters of the Socks: ");
             string sockLetters = Console.ReadLine();
 
